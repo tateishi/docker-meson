@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+  default:
+    build:
+      context: ./meson
+      args:
+        PROXY: ${PROXY}
+    tty: true
+    stdin_open: true
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ~/wks:/home/ubuntu/wks
